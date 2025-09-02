@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeLab Helsinki - Creative Writing, Film Making & Cinema Talks</title>
+    <meta name="description" content="CreativeLab Helsinki offers comprehensive creative education courses including Creative Writing, Film Making, and Cinema Talks for ages 15-21. Join our year-long program starting 30th Aug 2025.">
+        <style>
+        /* ===== Global ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+                    /* ===== Navbar ===== */
+            nav {
+                width: 100%;
+                background: rgba(30, 58, 138, 0.9); /* semi-transparent blue */
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                padding: 0.5rem 0;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            }
+
+            .nav-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            .nav-links li a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .nav-links li a:hover {
+                color: #fbbf24; /* golden hover */
+            }
+
+            .cta-button {
+                background: #d0e9f6;
+                color: #1e3a8a;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                font-weight: bold;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .cta-button:hover {
+                background: #fbbf24;
+                transform: translateY(-2px);
+            }
+
+            /* Responsive Navbar */
+            @media (max-width: 768px) {
+                .nav-container {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+
+                .nav-links {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+            }
+
+    .hero {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        overflow: hidden; /* ensures video doesn't overflow */
+    }
+
+    .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 58, 138, 0.6); /* dark overlay for readability */
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            font-size: 1.125rem;
+            padding: 0.75rem 1.5rem;
+        }
+
+        /* ===== Fonts ===== */
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Buttons ===== */
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem 0;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* White / Neutral Button */
+        .button-white {
+            background: #ffffff;
+            color: #333333; /* dark text for contrast */
+            border: 2px solid #cccccc;
+        }
+
+        .button-white:hover {
+            background: #f3f4f6;
+            transform: translateY(-2px);
+        }
+
+        /* Muted Warm Accent Button */
+        .button-accent {
+            background: #d16a5a; /* muted warm red/coral */
+            color: #ffffff;
+        }
+
+        .button-accent:hover {
+            background: #b65a4c; /* slightly darker on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Outline / Secondary Button */
+        .button-outline {
+            background: transparent;
+            border: 2px solid #d16a5a; /* same accent color for harmony */
+            color: #d16a5a;
+        }
+
+        .button-outline:hover {
+            background: #d16a5a;
+            color: #ffffff;
+        }
+
+
+
+        /* ===== Badges ===== */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .badge.free {
+            background-color: #10b981;
+            color: #fff;
+        }
+
+        .badge.group {
+            background-color: #3b82f6;
+            color: #fff;
+        }
+
+        /* ===== Sections ===== */
+        section {
+            padding: 40px 0;
+        }
+
+        /* ===== Section Titles ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== Payments Section ===== */
+        .payments {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 60px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: #f9fafb;
+            color: #1e3a8a;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            color: #374151;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        @media(min-width: 480px) {
+            .pricing-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* ===== Schedule Section ===== */
+        .schedule {
+            background: #f3f4f6;
+            color: #1e3a8a;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .schedule-item {
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .schedule-item.show {
+            display: block;
+        }
+
+        .schedule-item.upcoming {
+            background-color: #ffeedd;
+        }
+
+        .schedule-item.past {
+            background-color: #cccccc;
+            color: #666666;
+        }
+
+        .schedule-date {
+            font-weight: bold;
+            color: #ef4444;
+            margin-bottom: 0.25rem;
+        }
+
+        .schedule-time {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .schedule-topic {
+            font-size: 0.95rem;
+        }
+
+        /* ===== Schedule Filters ===== */
+        .schedule-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background-color: #f0f0f0;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #1e3a8a;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #162c6d; /* darker blue */
+            color: #fff;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #fbbf24;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2); /* subtle dividing line */
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: #d1d5db;
+        }
+
+        .support-text {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .pricing-buttons {
+                flex-direction: column;
+            }
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== General Glass Card Style ===== */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== Buttons ===== */
+        .glass-card button {
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card button:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .grid-pricing {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-pricing {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller laptops/tablets */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-pricing {
+                grid-template-columns: 1fr; /* 1 column on mobile */
+            }
+        }
+        </style>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo font-playfair">CinemaTalks <span style="font-size: 0.8rem; color: #6b7280;">Espoo</span></div>
+                    <ul class="nav-links">
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#pricing">Tickets</a></li>
+                        <li><a href="https://creativelab-helsinki.github.io/">CreativeLab-Helsinki</a></li>
+                        <li><a href="#footer">Address</a></li>
+                        <!-- <li><a href="#registration">Register</a></li> -->
+                    </ul>
+                <a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button">Register Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="./sandbox/cinematalks.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <h1 class="hero-title font-playfair">Discover the World of Cinema</h1>
+            <p class="hero-subtitle">Join CreativeLab Helsinki for engaging lectures, workshops, and discussions on filmmaking and cinematic history.</p>
+            <a href="#pricing" class="cta-button">Tickets</a>
+        </div>
+    </section>
+
+
+    <!-- Cinema Talks Schedule (Initially Hidden) -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="section-title font-playfair">Cinema Talks Schedule</h2>
+            <p class="section-subtitle">Join us for engaging discussions about cinema history and technique</p>
+
+            <!-- Filter Buttons -->
+            <div class="schedule-filters" style="text-align: center; margin-bottom: 1rem;">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="revisiting-history">Revisiting History</button>
+                <button class="filter-btn" data-filter="authorial-animation">Authorial Animation</button>
+                <button class="filter-btn" data-filter="documentary">Documentary Cinema +</button>
+                <button class="filter-btn" data-filter="titans-poets">Titans & Poets</button>
+            </div>
+
+            <div class="schedule-grid">
+
+                <!-- Autumn 2025 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Autumn 2025</h3>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">06.09.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 1:</strong> The Birth of Cinema...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">20.09.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 2:</strong> Norman McLaren...</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">04.10.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 3:</strong> Founders of Documentary Cinema...</div>
+                </div>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">28.10.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 4:</strong> Luchino Visconti "Bellissima"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">01.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 5:</strong> The Beginnings of Sound Cinema...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">15.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 6:</strong> Zbigniew Rybczyński</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">29.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 7:</strong> Mikhail Kalik "To Love"</div>
+                </div>
+
+                <!-- Winter 2025–26 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Winter 2025–26</h3>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">17.01.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 8:</strong> Orson Welles "Citizen Kane"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">31.01.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 9:</strong> Sergei Eisenstein...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">14.02.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 10:</strong> Jan Švankmajer</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">28.02.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 11:</strong> Sergei Miroshnichenko "Born in the USSR"</div>
+                </div>
+
+                <!-- Spring 2026 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Spring 2026</h3>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">14.03.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 12:</strong> Ed Wood "Plan 9 from Outer Space"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">28.03.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 13:</strong> To be announced</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">12.04.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 14:</strong> To be announced</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">26.04.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 15:</strong> Popular Science Films. Felix Sobolev</div>
+                </div>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">02.05.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 16:</strong> Pier Paolo Pasolini...</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- Tickets / Abonnements with Quantity Selection -->
+        <section id="pricing" class="py-20 px-6 bg-black/40">
+            <div class="max-w-7xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Cinema Talks Tickets & Abonnements</h2>
+                <p class="text-xl text-white/70 mb-4">Select abonement here:</p>
+                <hr class="pricing-divider">
+            </div>
+
+        <div class="grid-pricing max-w-6xl mx-auto">
+            <!-- Lecture Pass -->
+            <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
+            <h3 class="text-2xl font-bold text-white mb-4">Lecture Pass</h3>
+            <p class="text-5xl font-extrabold text-pink-400 mb-4">€15 / Online | €20 On Site</p>
+            <p class="text-white/70 mb-4">1 lecture per pass</p>
+            
+            <label class="text-white/70 mb-2">Quantity:</label>
+            <select id="lectureQuantity" class="w-full mb-4 p-2 rounded text-black">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <a href="#" onclick="alert('You selected ' + document.getElementById('lectureQuantity').value + ' Lecture Pass(es)')">
+                <button class="w-full bg-gradient-to-r from-pink-500 to-violet-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Register Online
+                </button>
+            </a>
+            </div>
+
+            <!-- Thematic Cycle -->
+            <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
+            <h3 class="text-2xl font-bold text-white mb-4">Thematic Cycle</h3>
+            <p class="text-5xl font-extrabold text-blue-400 mb-4">€50</p>
+            <p class="text-white/70 mb-4">4 lectures per cycle</p>
+            
+            <label class="text-white/70 mb-2">Quantity:</label>
+            <select id="cycleQuantity" class="w-full mb-4 p-2 rounded text-black">
+                <option value="1">1 cycle</option>
+                <option value="2">2 cycles</option>
+                <option value="3">3 cycles</option>
+            </select>
+
+            <a href="#" onclick="alert('You selected ' + document.getElementById('cycleQuantity').value + ' Thematic Cycle(s)')">
+                <button class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Register
+                </button>
+            </a>
+            </div>
+
+            <!-- Season Pass -->
+            <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
+            <h3 class="text-2xl font-bold text-white mb-4">Season Pass</h3>
+            <p class="text-5xl font-extrabold text-orange-400 mb-4">€180</p>
+            <p class="text-white/70 mb-4">Access to all lectures of the year</p>
+            
+            <label class="text-white/70 mb-2">Quantity:</label>
+            <select id="seasonQuantity" class="w-full mb-4 p-2 rounded text-black">
+                <option value="1">1 pass</option>
+                <option value="2">2 passes</option>
+                <option value="3">3 passes</option>
+            </select>
+
+            <a href="#" onclick="alert('You selected ' + document.getElementById('seasonQuantity').value + ' Season Pass(es)')">
+                <button class="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Register
+                </button>
+            </a>
+            </div>
+
+            <!-- Optional Recorded Sessions -->
+            <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
+            <h3 class="text-2xl font-bold text-white mb-4">Recorded Sessions</h3>
+            <p class="text-5xl font-extrabold text-emerald-400 mb-4">€5 per lecture</p>
+            <p class="text-white/70 mb-4">Perfect for reviewing missed sessions</p>
+
+            <label class="text-white/70 mb-2">Quantity:</label>
+            <select id="recordedQuantity" class="w-full mb-4 p-2 rounded text-black">
+                <option value="1">1 lecture</option>
+                <option value="2">2 lectures</option>
+                <option value="3">3 lectures</option>
+                <option value="4">4 lectures</option>
+            </select>
+
+            <a href="#" onclick="alert('You selected ' + document.getElementById('recordedQuantity').value + ' Recorded Session(s)')">
+                <button class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Add Recorded Sessions
+                </button>
+            </a>
+            </div>
+        </div>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3 class="font-playfair">CreativeLab: CinemaTalks</h3>
+                        <p>Discover cinema history and craft your own stories with practical creative workshops</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="https://www.instagram.com/creativelabhelsinki/">📷 Instagram</a>
+                            <a href="https://www.facebook.com/profile.php?id=61565014807067">📘 Facebook</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="#schedule">Schedule</a>
+                        <a href="#pricing">Tickets</a>
+
+                    </div>
+                    
+                <div id="footer" class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 CinemaTalks: Mankaan Kuja 2c, Espoo 02180</p>
+                    <p>📧 interlang.home@gmail.com</p>
+                    <p>📞 +358 40 1314588</p>
+                </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div>© 2025 CreativeLab Helsinki. All rights reserved.</div>
+                    <div class="support-text">❤️ Supported by Opetus- ja kulttuuriministeriö Finland</div>
+                </div>
+            </div>
+        </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const scheduleSection = document.getElementById('schedule');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const scheduleItems = document.querySelectorAll('.schedule-item');
+
+        // Toggle schedule visibility
+        toggleBtn.addEventListener('click', () => {
+            if (scheduleSection.style.display === 'none') {
+                scheduleSection.style.display = 'block';
+                toggleBtn.textContent = 'Hide Schedule';
+                scheduleSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                scheduleSection.style.display = 'none';
+                toggleBtn.textContent = 'View Schedule';
+            }
+        });
+
+        // Highlight past and upcoming lectures
+        const today = new Date();
+        const oneMonthLater = new Date();
+        oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
+
+        scheduleItems.forEach(item => {
+            const dateText = item.querySelector('.schedule-date').textContent;
+            const parts = dateText.split('.');
+            const itemDate = new Date(parts[2], parts[1] - 1, parts[0]);
+
+            if (itemDate < today) {
+                item.classList.add('past');
+            } else if (itemDate <= oneMonthLater) {
+                item.classList.add('upcoming');
+            }
+        });
+
+        // Filter lectures by theme
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                scheduleItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.toggle('show', item.classList.contains(filter));
+                    }
+                });
+            });
+        });
+
+        // Show all lectures by default
+        document.querySelector('.filter-btn[data-filter="all"]').click();
+    </script>
+        <script>
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            scheduleItems.forEach(item => {
+                if (filter === 'all') {
+                    item.classList.add('show');
+                } else {
+                    item.classList.toggle('show', item.classList.contains(filter));
+                }
+            });
+
+            // Обновляем активную кнопку
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // Изначально активна кнопка "All"
+    document.querySelector('.filter-btn[data-filter="all"]').click();
+    </script>
+
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
