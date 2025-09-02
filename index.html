@@ -720,20 +720,12 @@
             <!-- Lecture Pass -->
             <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
             <h3 class="text-2xl font-bold text-white mb-4">Lecture Pass</h3>
-            <p class="text-5xl font-extrabold text-pink-400 mb-4">€15 / Online | €20 On Site</p>
+            <p class="text-5xl font-extrabold text-pink-400 mb-4">€15 / Buy ticket online | €20 Buy ticket on Site</p>
             <p class="text-white/70 mb-4">1 lecture per pass</p>
-            
-            <label class="text-white/70 mb-2">Quantity:</label>
-            <select id="lectureQuantity" class="w-full mb-4 p-2 rounded text-black">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
 
-            <a href="#" onclick="alert('You selected ' + document.getElementById('lectureQuantity').value + ' Lecture Pass(es)')">
-                <button class="w-full bg-gradient-to-r from-pink-500 to-violet-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
-                Register Online
+            <a href="https://book.stripe.com/eVq28r3UbadrbxBgzOd7q04">
+                <button class="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Get ticket(s)
                 </button>
             </a>
             </div>
@@ -743,17 +735,10 @@
             <h3 class="text-2xl font-bold text-white mb-4">Thematic Cycle</h3>
             <p class="text-5xl font-extrabold text-blue-400 mb-4">€50</p>
             <p class="text-white/70 mb-4">4 lectures per cycle</p>
-            
-            <label class="text-white/70 mb-2">Quantity:</label>
-            <select id="cycleQuantity" class="w-full mb-4 p-2 rounded text-black">
-                <option value="1">1 cycle</option>
-                <option value="2">2 cycles</option>
-                <option value="3">3 cycles</option>
-            </select>
 
-            <a href="#" onclick="alert('You selected ' + document.getElementById('cycleQuantity').value + ' Thematic Cycle(s)')">
-                <button class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
-                Register
+            <a href="https://book.stripe.com/eVq00j4Yf0CR59dcjyd7q07">
+                <button class="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
+                Get ticket(s)
                 </button>
             </a>
             </div>
@@ -763,17 +748,10 @@
             <h3 class="text-2xl font-bold text-white mb-4">Season Pass</h3>
             <p class="text-5xl font-extrabold text-orange-400 mb-4">€180</p>
             <p class="text-white/70 mb-4">Access to all lectures of the year</p>
-            
-            <label class="text-white/70 mb-2">Quantity:</label>
-            <select id="seasonQuantity" class="w-full mb-4 p-2 rounded text-black">
-                <option value="1">1 pass</option>
-                <option value="2">2 passes</option>
-                <option value="3">3 passes</option>
-            </select>
 
-            <a href="#" onclick="alert('You selected ' + document.getElementById('seasonQuantity').value + ' Season Pass(es)')">
+            <a href="https://book.stripe.com/aFa7sL0HZ2KZatxbfud7q06">
                 <button class="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
-                Register
+                Get ticket(s)
                 </button>
             </a>
             </div>
@@ -784,17 +762,9 @@
             <p class="text-5xl font-extrabold text-emerald-400 mb-4">€5 per lecture</p>
             <p class="text-white/70 mb-4">Perfect for reviewing missed sessions</p>
 
-            <label class="text-white/70 mb-2">Quantity:</label>
-            <select id="recordedQuantity" class="w-full mb-4 p-2 rounded text-black">
-                <option value="1">1 lecture</option>
-                <option value="2">2 lectures</option>
-                <option value="3">3 lectures</option>
-                <option value="4">4 lectures</option>
-            </select>
-
             <a href="#" onclick="alert('You selected ' + document.getElementById('recordedQuantity').value + ' Recorded Session(s)')">
                 <button class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 rounded-2xl font-semibold hover:shadow-lg transition-all">
-                Add Recorded Sessions
+                Add Recorded Session(s)
                 </button>
             </a>
             </div>
@@ -926,24 +896,23 @@
     });
     </script>
 
-<script>
-const today = new Date();
+    <script>
+    const today = new Date();
 
-document.querySelectorAll('.schedule-item').forEach(item => {
-    const dateEl = item.querySelector('.schedule-date');
-    const dateParts = dateEl.textContent.split('.');
-    const itemDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+    document.querySelectorAll('.schedule-item').forEach(item => {
+        const dateEl = item.querySelector('.schedule-date');
+        const dateParts = dateEl.textContent.split('.');
+        const itemDate = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
 
-    const diffDays = (itemDate - today) / (1000 * 60 * 60 * 24);
+        const diffDays = (itemDate - today) / (1000 * 60 * 60 * 24);
 
-    if (diffDays >= 0 && diffDays <= 14) {
-        item.classList.add('upcoming');
-    } else if (itemDate < today) {
-        item.classList.add('past');
-    }
-});
-</script>
-
+        if (diffDays >= 0 && diffDays <= 14) {
+            item.classList.add('upcoming');
+        } else if (itemDate < today) {
+            item.classList.add('past');
+        }
+    });
+    </script>
 
 </body>
 </html>
