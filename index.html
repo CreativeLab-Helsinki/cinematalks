@@ -487,13 +487,13 @@
 
         .grid-pricing {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
         @media (max-width: 1024px) {
             .grid-pricing {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller laptops/tablets */
+                grid-template-columns: repeat(2, 1fr); 
             }
         }
 
@@ -573,7 +573,7 @@
             <li><a href="#pricing">Tickets</a></li>
             <li><a href="https://creativelab-helsinki.github.io/">CreativeLab-Helsinki</a></li>
             <li><a href="#footer">Address</a></li>
-            <li><a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button">Register Now</a></li>
+            <li><a href="#pricing" class="cta-button">Get ticket(s)</a></li>
         </ul>
         </div>
     </div>
@@ -709,14 +709,14 @@
     </section>
 
         <!-- Tickets / Abonnements with Quantity Selection -->
-        <section id="pricing" class="py-20 px-6 bg-black/40">
+        <section id="pricing" class="py-20 px-8 bg-black/40">
             <div class="max-w-7xl mx-auto text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Cinema Talks Tickets & Abonnements</h2>
                 <p class="text-xl text-white/70 mb-4">Select abonement here:</p>
                 <hr class="pricing-divider">
             </div>
 
-        <div class="grid-pricing max-w-6xl mx-auto">
+        <div class="grid-pricing max-w-6xl mx-auto justify-cente">
             <!-- Lecture Pass -->
             <div class="glass-card rounded-3xl p-8 text-center flex flex-col justify-between">
             <h3 class="text-2xl font-bold text-white mb-4">Lecture Pass</h3>
